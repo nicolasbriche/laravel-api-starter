@@ -1,15 +1,14 @@
-*.log
-.DS_Store
+# Laravel
 .env
 .env.backup
 .env.production
+.env.local
+.env.*.local
 .phpactor.json
 .phpunit.result.cache
 /.fleet
-/.idea
 /.nova
 /.phpunit.cache
-/.vscode
 /.zed
 /auth.json
 /node_modules
@@ -21,28 +20,26 @@
 /vendor
 Homestead.json
 Homestead.yaml
-Thumbs.db
-
-# Docker
-docker-compose.override.yml
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# macOS
-.DS_Store
-
-# Environment
-.env.local
-.env.*.local
 
 # Database
 *.sqlite
 *.sqlite-journal
+
+# IDE
+.idea/
+.vscode/
+
+# Editors
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
 
 # Logs
 *.log
