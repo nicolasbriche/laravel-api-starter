@@ -123,4 +123,17 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | API Rate Limit
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the maximum number of API requests that can be made
+    | per minute by a single user or IP address. This helps protect your API
+    | from abuse and ensures fair usage across all clients.
+    |
+    | You can customize this value in your .env file using API_RATE_LIMIT.
+    |
+    */
+    'api_rate_limit' => env('API_RATE_LIMIT', 60),
 ];
