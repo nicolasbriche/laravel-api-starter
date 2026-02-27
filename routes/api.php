@@ -2,16 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\HealthController;
+
+use App\Http\Controllers\Api\TestController;
 
 // Routes publiques avec rate limiting
 Route::middleware('throttle:api')->group(function () {
-    Route::get('/health', function () {
-        return response()->json([
-            'status' => 'ok',
-            'timestamp' => now(),
-            'service' => 'Laravel API Starter'
-        ]);
-    });
+    Route::get('/health', [HealthController::class, 'check']);
 });
 
 // Routes protégées par Sanctum ET rate limiting
