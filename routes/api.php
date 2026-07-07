@@ -4,8 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HealthController;
 
-use App\Http\Controllers\Api\TestController;
-
 // Routes publiques avec rate limiting
 Route::middleware('throttle:api')->group(function () {
     Route::get('/health', [HealthController::class, 'check']);
