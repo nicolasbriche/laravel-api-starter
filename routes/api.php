@@ -12,6 +12,12 @@ Route::middleware('throttle:api')->group(function () {
 
 // Routes protégées par Sanctum ET rate limiting
 Route::middleware(['auth:sanctum', 'throttle:api'])->group(function () {
+    /**
+     * Get authenticated user
+     *
+     * Retourne les informations de l'utilisateur
+     * actuellement authentifié via son token Sanctum.
+     */
     Route::get('/user', function (Request $request) {
         return new UserResource($request->user());
     });
