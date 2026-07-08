@@ -1,0 +1,18 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+
+    # Niveau d'analyse : 0 (permissif) à 9 (très strict)
+    level: 5
+
+    ignoreErrors:
+        -
+            message: '#Cannot call method toIso8601String\(\) on string#'
+            path: app/Http/Resources/UserResource.php
+
+    excludePaths:
+        - app/Http/Middleware/*
