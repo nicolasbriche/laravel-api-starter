@@ -27,6 +27,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             \Illuminate\Http\Middleware\HandleCors::class,
         ]);
+
+        // Alias pour maruer une versio, d'API comme dépréciée
+        $middleware->alias([
+            'api.deprecated' => \App\Http\Middleware\DeprecatedApiVersion::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // Force les réponses JSON pour les erreurs d'authentification
