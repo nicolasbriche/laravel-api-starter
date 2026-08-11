@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 uses(RefreshDatabase::class);
 
 it('returns unauthenticated for guests on protected routes', function () {
-    $response = $this->getJson('/api/user');
+    $response = $this->getJson('/api/v1/user');
 
     $response->assertStatus(401)
         ->assertJson([
@@ -18,7 +18,7 @@ it('returns unauthenticated for guests on protected routes', function () {
 it('returns the authenticated user data', function () {
     $user = User::factory()->create();
 
-    $response = $this->actingAs($user)->getJson('/api/user');
+    $response = $this->actingAs($user)->getJson('/api/v1/user');
 
     $response->assertStatus(200)
         ->assertJsonPath('data.id', $user->id)
